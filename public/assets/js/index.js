@@ -70,6 +70,8 @@ const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    // figure out a better solution than this
+    id: "1",
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
@@ -100,6 +102,7 @@ const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
   renderActiveNote();
+  console.log("ding");
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
